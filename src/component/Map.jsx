@@ -25,7 +25,6 @@ function Map() {
   } = useGeolocation();
   const { mapLat, mapLng } = useUrlPosition();
 
-  
   useEffect(() => {
     if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
   }, [mapLat, mapLng]);
@@ -52,17 +51,22 @@ function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.fr/hot/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {cities.map((city) => (
-          <Marker
-            position={[city.position.lat, city.position.lng]}
-            key={city.id}
-          >
-            <Popup>
-              <span>{city.emoji}</span>
-              <span>{city.cityName}</span>
-            </Popup>
-          </Marker>
-        ))}
+        {cities.map(
+          (city) =>
+            city.position?.lat &&
+            city.position?.lng && (
+              <Marker
+                position={[city.position.lat, city.position.lng]}
+                key={city.id}
+              >
+                <Popup>
+                  <span>{city.emoji}</span>
+                  <span>{city.cityName}</span>
+                </Popup>
+              </Marker>
+            )
+        )}
+
         <ChangeCenter position={mapPosition} />
         <DeleteClick />
       </MapContainer>

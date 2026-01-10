@@ -1,4 +1,4 @@
-import Map from "../component/map";
+import Map from "../component/Map";
 import SideBar from "../component/SideBar";
 import styles from "./AppLayout.module.css";
 function AppLayout() {

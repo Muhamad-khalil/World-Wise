@@ -1,5 +1,5 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
-import styles from "./map.module.css";
+import { useNavigate } from "react-router-dom";
+import styles from "./Map.module.css";
 import {
   MapContainer,
   Marker,

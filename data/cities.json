@@ -1,30 +1,6 @@
 {
   "cities": [
     {
-      "id": "8e75",
-      "cityName": "Ta’if",
-      "country": "Saudi Arabia",
-      "emoji": "🇸🇦",
-      "date": "2026-01-10T17:33:05.449Z",
-      "notes": "",
-      "position": {
-        "lat": 22.59372606392931,
-        "lng": 42.71484375000001
-      }
-    },
-    {
-      "id": "f0dd",
-      "cityName": "Markaz al Waḩat ad Dakhilah",
-      "country": "Egypt",
-      "emoji": "🇪🇬",
-      "date": "2026-01-10T17:33:07.505Z",
-      "notes": "",
-      "position": {
-        "lat": 24.5271348225978,
-        "lng": 26.894531250000004
-      }
-    },
-    {
       "id": "5227",
       "cityName": "Valverdon",
       "country": "Spain",
@@ -46,6 +22,54 @@
       "position": {
         "lat": 40.58058466412764,
         "lng": -3.3178710937500004
+      }
+    },
+    {
+      "id": "b4b5",
+      "cityName": "Ontinyent",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-10T17:57:56.357Z",
+      "notes": "",
+      "position": {
+        "lat": 38.805470223177466,
+        "lng": -0.6372070312500001
+      }
+    },
+    {
+      "id": "4976",
+      "cityName": "Azuaga",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-10T17:57:58.693Z",
+      "notes": "",
+      "position": {
+        "lat": 38.23818011979866,
+        "lng": -5.646972656250001
+      }
+    },
+    {
+      "id": "3c3b",
+      "cityName": "Luzaga",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-01-10T17:58:55.500Z",
+      "notes": "",
+      "position": {
+        "lat": 40.99374942865965,
+        "lng": -2.4389648437500004
+      }
+    },
+    {
+      "id": "d9b4",
+      "cityName": "Giza",
+      "country": "Egypt",
+      "emoji": "🇪🇬",
+      "date": "2026-01-10T17:59:04.739Z",
+      "notes": "",
+      "position": {
+        "lat": 30.06470862518983,
+        "lng": 31.201171875000004
       }
     }
   ]

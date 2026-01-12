@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import { citiesReducer, initialState } from "../reducer/citiesReducer";
 
 const CitiesContext = createContext();
-const BASE_URL = "http://localhost:9000";
+const BASE_URL = "https://69652dd8e8ce952ce1f46ce3.mockapi.io";
 
 function CitiesProvider({ children }) {
   const [{ cities, isLoading, currentCity, error }, dispatch] = useReducer(

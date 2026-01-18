@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+} from "react";
 import { citiesReducer, initialState } from "../reducer/citiesReducer";
 
 const CitiesContext = createContext();
@@ -7,7 +13,7 @@ const BASE_URL = "https://69652dd8e8ce952ce1f46ce3.mockapi.io";
 function CitiesProvider({ children }) {
   const [{ cities, isLoading, currentCity, error }, dispatch] = useReducer(
     citiesReducer,
-    initialState
+    initialState,
   );
 
   useEffect(
@@ -32,29 +38,32 @@ function CitiesProvider({ children }) {
       }
       fetchCities();
     },
-    [dispatch]
+    [dispatch],
   );
 
-  async function getCity(id) {
-    if (Number(id) === currentCity.id) return;
+  const getCity = useCallback(
+    async function getCity(id) {
+      if (Number(id) === currentCity.id) return;
 
-    dispatch({
-      type: "loading",
-    });
-    try {
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
-      const data = await res.json();
       dispatch({
-        type: "city/loaded",
-        payload: data,
+        type: "loading",
       });
-    } catch {
-      dispatch({
-        type: "rejected",
-        payload: "there is an error created data...",
-      });
-    }
-  }
+      try {
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const data = await res.json();
+        dispatch({
+          type: "city/loaded",
+          payload: data,
+        });
+      } catch {
+        dispatch({
+          type: "rejected",
+          payload: "there is an error created data...",
+        });
+      }
+    },
+    [currentCity.id],
+  );
 
   async function createCity(newCity) {
     dispatch({

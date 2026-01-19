@@ -64,7 +64,7 @@ function Map() {
                   <span>{city.cityName}</span>
                 </Popup>
               </Marker>
-            )
+            ),
         )}
 
         <ChangeCenter position={mapPosition} />
@@ -76,7 +76,11 @@ function Map() {
 
 function ChangeCenter({ position }) {
   const map = useMap();
-  map.setView(position);
+
+  useEffect(() => {
+    map.setView(position);
+  }, [map, position]);
+
   return null;
 }
 
